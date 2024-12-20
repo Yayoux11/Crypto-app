@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <!-- Fond avec dégradé -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Filtre pour l'effet de lueur -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Arrière-plan -->
+  <rect width="400" height="250" fill="url(#bgGradient)"/>
+  
+  <!-- Grille de fond -->
+  <g stroke="#ffffff20" stroke-width="0.5">
+    <path d="M50,0 L50,250" />
+    <path d="M100,0 L100,250" />
+    <path d="M150,0 L150,250" />
+    <path d="M200,0 L200,250" />
+    <path d="M250,0 L250,250" />
+    <path d="M300,0 L300,250" />
+    <path d="M350,0 L350,250" />
+  </g>
+
+  <!-- Symbole Bitcoin stylisé -->
+  <circle cx="100" cy="125" r="25" fill="none" stroke="#ffd700" stroke-width="2"/>
+  <text x="100" y="135" text-anchor="middle" font-family="Arial" font-size="24" fill="#ffd700">₿</text>
+  
+  <!-- Courbe de trading principale -->
+  <path d="M50,200 Q100,180 150,150 T250,80 T350,30" 
+        fill="none" 
+        stroke="#00ff88" 
+        stroke-width="3"
+        filter="url(#glow)"/>
+  
+  <!-- Points de données sur la courbe -->
+  <circle cx="50" cy="200" r="3" fill="#00ff88"/>
+  <circle cx="150" cy="150" r="3" fill="#00ff88"/>
+  <circle cx="250" cy="80" r="3" fill="#00ff88"/>
+  <circle cx="350" cy="30" r="3" fill="#00ff88"/>
+  
+  <!-- Flèche au bout de la courbe -->
+  <polygon points="350,30 340,45 360,45" fill="#00ff88" filter="url(#glow)"/>
+  
+  <!-- Nom de l'entreprise -->
+  <text x="200" y="220" 
+        text-anchor="middle" 
+        font-family="Arial, sans-serif" 
+        font-size="42" 
+        font-weight="bold" 
+        fill="#ffffff"
+        filter="url(#glow)">
+    <tspan fill="#ffffff">Coin</tspan><tspan fill="#00ff88">Bit</tspan>
+  </text>
+</svg>
